@@ -63,7 +63,7 @@ function DiscoveryForm() {
         { id: 'system-failure', title: 'System Failure' },
         { id: 'past-systems', title: 'Past Systems' },
         { id: 'difficult-day', title: 'Recent Difficult Day' },
-        { id: 'emotions', title: 'Emotions' },
+        { id: 'burnt_out', title: 'Emotions' },
         { id: 'actual-impact', title: 'Actual Impact' },
         { id: 'dropping-out', title: 'Dropping Out Considerations' },
         { id: 'context', title: 'About You (Context)' },
