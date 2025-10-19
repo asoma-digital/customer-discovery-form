@@ -533,7 +533,7 @@ function DiscoveryForm() {
                     margin: "1rem auto",
                     padding: "1rem",
                     paddingBottom: "100px",
-                    maxHeight: "calc(100vh - 4rem)"
+                    minHeight: "calc(100vh - 4rem)"
                 }}
             >
 
