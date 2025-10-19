@@ -161,6 +161,24 @@ function DiscoveryForm() {
             title: 'About You (Demographics)',
             content: (
                 <section>
+                    <ShortAnswerQuestion
+                        name="first_name"
+                        label="What is your first name?"
+                        required={true}
+                        placeholder="e.g., Jane"
+                    />
+                    <ShortAnswerQuestion
+                        name="last_name"
+                        label="What is your last name?"
+                        required={true}
+                        placeholder="e.g., Doe"
+                    />
+                    <ShortAnswerQuestion
+                        name="edu_email"
+                        label="What is your educational email address?"
+                        required={true}
+                        placeholder="e.g., jane.doe@university.edu"
+                    />
                     <MultipleChoiceQuestion
                         name="school_year"
                         label="What year are you in?"
@@ -512,8 +530,8 @@ function DiscoveryForm() {
                 onSubmit={handleSubmit(onSubmit)} 
                 style={{ 
                     maxWidth: 800,
-                    margin: "2rem auto",
-                    padding: "2rem",
+                    margin: "1rem auto",
+                    padding: "1rem",
                     paddingBottom: "100px",
                     maxHeight: "calc(100vh - 4rem)"
                 }}
