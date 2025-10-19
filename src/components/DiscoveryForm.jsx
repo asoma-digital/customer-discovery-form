@@ -146,206 +146,227 @@ function DiscoveryForm() {
                     />
                 </section>
 
-                <section>
+                <section id='survey-questions'>
                     <h2>Survey Questions</h2>
-                    <ParagraphAnswerQuestion
-                        name="recent_overwhelm"
-                        label="Can you walk me through a recent time - like in the past week - when you felt behind, overwhelmed, or like things were slipping through the cracks? What specifically triggered that feeling, and what did you do in response?"
-                        required={true}
-                        placeholder="placholder..."
-                    />
-                    <FollowUpQuestion
-                        parentName="recent_overwhelm"
-                        {...followUpConfig.recent_overwhelm1}
-                    />
-                    <FollowUpQuestion
-                        parentName="recent_overwhelm"
-                        {...followUpConfig.recent_overwhelm2}
-                    />
-                    <FollowUpQuestion
-                        parentName="recent_overwhelm"
-                        {...followUpConfig.recent_overwhelm3}
-                    />
+                    <section>
+                        <h3>Recent Overwhelm</h3>
+                        <ParagraphAnswerQuestion
+                            name="recent_overwhelm"
+                            label="Can you walk me through a recent time - like in the past week - when you felt behind, overwhelmed, or like things were slipping through the cracks? What specifically triggered that feeling, and what did you do in response?"
+                            required={true}
+                            placeholder="placholder..."
+                        />
+                        <FollowUpQuestion
+                            parentName="recent_overwhelm"
+                            {...followUpConfig.recent_overwhelm1}
+                        />
+                        <FollowUpQuestion
+                            parentName="recent_overwhelm"
+                            {...followUpConfig.recent_overwhelm2}
+                        />
+                        <FollowUpQuestion
+                            parentName="recent_overwhelm"
+                            {...followUpConfig.recent_overwhelm3}
+                        />
+                    </section>
 
+                    <section>
+                        <h3>Struggled Starting</h3>
+                        <ParagraphAnswerQuestion
+                            name="struggled_starting"
+                            label="Tell me about a specific assignment or deadline from the past two weeks where you struggled to get started or stay on track. Walk me through what happened from the moment you first knew about it to when you finally submitted it or missed it."
+                            required={true}
+                            placeholder="placholder..."
+                        />
+                        <FollowUpQuestion
+                            parentName="struggled_starting"
+                            {...followUpConfig.struggled_starting1}
+                        />
+                        <FollowUpQuestion
+                            parentName="struggled_starting"
+                            {...followUpConfig.struggled_starting2}
+                        />
+                        <FollowUpQuestion
+                            parentName="struggled_starting"
+                            {...followUpConfig.struggled_starting3}
+                        />
+                    </section>
 
-                    <ParagraphAnswerQuestion
-                        name="struggled_starting"
-                        label="Tell me about a specific assignment or deadline from the past two weeks where you struggled to get started or stay on track. Walk me through what happened from the moment you first knew about it to when you finally submitted it or missed it."
-                        required={true}
-                        placeholder="placholder..."
-                    />
-                    <FollowUpQuestion
-                        parentName="struggled_starting"
-                        {...followUpConfig.struggled_starting1}
-                    />
-                    <FollowUpQuestion
-                        parentName="struggled_starting"
-                        {...followUpConfig.struggled_starting2}
-                    />
-                    <FollowUpQuestion
-                        parentName="struggled_starting"
-                        {...followUpConfig.struggled_starting3}
-                    />
+                    <section>
+                        <h3>Recent Struggle Starting</h3>
+                        <ParagraphAnswerQuestion
+                            name="recent_struggle_starting"
+                            label="Think about the last time you sat down to work on something important but couldn’t get yourself to actually start. Where were you, what were you supposed to be doing, and what happened instead?"
+                            required={true}
+                            placeholder="placholder..."
+                        />
+                        <FollowUpQuestion
+                            parentName="recent_struggle_starting"
+                            {...followUpConfig.recent_struggle_starting1}
+                        />
+                        <FollowUpQuestion
+                            parentName="recent_struggle_starting"
+                            {...followUpConfig.recent_struggle_starting2}
+                        />
+                        <FollowUpQuestion
+                            parentName="recent_struggle_starting"
+                            {...followUpConfig.recent_struggle_starting3}
+                        />
+                    </section>
 
+                    <section>
+                        <h3>Tracking Assignments</h3>
+                        <ParagraphAnswerQuestion
+                            name="track_assignments"
+                            label="How are you currently keeping track of your assignments and deadlines? Where do you write things down to save them? What’s on these apps / tools right now?"
+                            required={true}
+                            placeholder="placholder..."
+                        />
+                        <FollowUpQuestion
+                            parentName="track_assignments"
+                            {...followUpConfig.track_assignments1}
+                        />
+                        <FollowUpQuestion
+                            parentName="track_assignments"
+                            {...followUpConfig.track_assignments2}
+                        />
+                        <FollowUpQuestion
+                            parentName="track_assignments"
+                            {...followUpConfig.track_assignments3}
+                        />
+                    </section>
 
-                    <ParagraphAnswerQuestion
-                        name="recent_struggle_starting"
-                        label="Think about the last time you sat down to work on something important but couldn’t get yourself to actually start. Where were you, what were you supposed to be doing, and what happened instead?"
-                        required={true}
-                        placeholder="placholder..."
-                    />
-                    <FollowUpQuestion
-                        parentName="recent_struggle_starting"
-                        {...followUpConfig.recent_struggle_starting1}
-                    />
-                    <FollowUpQuestion
-                        parentName="recent_struggle_starting"
-                        {...followUpConfig.recent_struggle_starting2}
-                    />
-                    <FollowUpQuestion
-                        parentName="recent_struggle_starting"
-                        {...followUpConfig.recent_struggle_starting3}
-                    />
+                    <section>
+                        <h3>System Failure</h3>
+                        <ParagraphAnswerQuestion
+                            name="system_failed"
+                            label="When was the last time your system failed you - like you missed something important or forgot a deadline? What broke down?"
+                            required={true}
+                            placeholder="placholder..."
+                        />
+                        <FollowUpQuestion
+                            parentName="system_failed"
+                            {...followUpConfig.system_failed1}
+                        />
+                        <FollowUpQuestion
+                            parentName="system_failed"
+                            {...followUpConfig.system_failed2}
+                        />
+                        <FollowUpQuestion
+                            parentName="system_failed"
+                            {...followUpConfig.system_failed3}
+                        />
+                    </section>
 
+                    <section>
+                        <h3>Past Systems</h3>
+                        <ParagraphAnswerQuestion
+                            name="past_systems"
+                            label="Walk me through the different apps, planners, or systems you’ve tried in the past to stay organized. For each one, tell me why you started using it, how long you stuck with it, and what made you stop or switch."
+                            required={true}
+                            placeholder="placholder..."
+                        />
+                        <FollowUpQuestion
+                            parentName="past_systems"
+                            {...followUpConfig.past_systems1}
+                        />
+                        <FollowUpQuestion
+                            parentName="past_systems"
+                            {...followUpConfig.past_systems2}
+                        />
+                        <FollowUpQuestion
+                            parentName="past_systems"
+                            {...followUpConfig.past_systems3}
+                        />
+                    </section>
 
-                    <ParagraphAnswerQuestion
-                        name="track_assignments"
-                        label="Show me how you’re currently keeping track of your assignments and deadlines. Where do you write things down to save them? Can you pull it up and walk me through what’s on there right now?"
-                        required={true}
-                        placeholder="placholder..."
-                    />
-                    <FollowUpQuestion
-                        parentName="track_assignments"
-                        {...followUpConfig.track_assignments1}
-                    />
-                    <FollowUpQuestion
-                        parentName="track_assignments"
-                        {...followUpConfig.track_assignments2}
-                    />
-                    <FollowUpQuestion
-                        parentName="track_assignments"
-                        {...followUpConfig.track_assignments3}
-                    />
+                    <section>
+                        <h3>Recent Difficult Day</h3>
+                        <ParagraphAnswerQuestion
+                            name="recent_difficult_day"
+                            label="Tell me about a recent day that was particularly hard for you academically - walk me through from when you woke up to when you went to bed. What made it harder than usual?"
+                            required={true}
+                            placeholder="placholder..."
+                        />
+                        <FollowUpQuestion
+                            parentName="recent_difficult_day"
+                            {...followUpConfig.recent_difficult_day1}
+                        />
+                        <FollowUpQuestion
+                            parentName="recent_difficult_day"
+                            {...followUpConfig.recent_difficult_day2}
+                        />
+                        <FollowUpQuestion
+                            parentName="recent_difficult_day"
+                            {...followUpConfig.recent_difficult_day3}
+                        />
+                    </section>
 
+                    <section>
+                        <h3>Emotions</h3>
+                        <ParagraphAnswerQuestion
+                            name="burnt_out"
+                            label="Tell me about the last time you hit a wall emotionally with school - where you were just completely burnt out or couldn’t make yourself do anything. What day was that, what triggered it, and what did you actually do for the next few hours?"
+                            required={true}
+                            placeholder="placholder..."
+                        />
+                        <FollowUpQuestion
+                            parentName="burnt_out"
+                            {...followUpConfig.burnt_out1}
+                        />
+                        <FollowUpQuestion
+                            parentName="burnt_out"
+                            {...followUpConfig.burnt_out2}
+                        />
+                        <FollowUpQuestion
+                            parentName="burnt_out"
+                            {...followUpConfig.burnt_out3}
+                        />
+                    </section>
 
-                    <ParagraphAnswerQuestion
-                        name="system_failed"
-                        label="When was the last time your system failed you - like you missed something important or forgot a deadline? What broke down?"
-                        required={true}
-                        placeholder="placholder..."
-                    />
-                    <FollowUpQuestion
-                        parentName="system_failed"
-                        {...followUpConfig.system_failed1}
-                    />
-                    <FollowUpQuestion
-                        parentName="system_failed"
-                        {...followUpConfig.system_failed2}
-                    />
-                    <FollowUpQuestion
-                        parentName="system_failed"
-                        {...followUpConfig.system_failed3}
-                    />
+                    <section>
+                        <h3>Actual Impact</h3>
+                        <ParagraphAnswerQuestion
+                            name="actual_impact"
+                            label="Let’s talk about actual impact. Can you tell me about a specific grade, dropped class, or academic consequence you’ve experienced because of these challenges? What happened?"
+                            required={true}
+                            placeholder="placholder..."
+                        />
+                        <FollowUpQuestion
+                            parentName="actual_impact"
+                            {...followUpConfig.actual_impact1}
+                        />
+                        <FollowUpQuestion
+                            parentName="actual_impact"
+                            {...followUpConfig.actual_impact2}
+                        />
+                        <FollowUpQuestion
+                            parentName="actual_impact"
+                            {...followUpConfig.actual_impact3}
+                        />
+                    </section>
 
-
-                    <ParagraphAnswerQuestion
-                        name="past_systems"
-                        label="Walk me through the different apps, planners, or systems you’ve tried in the past to stay organized. For each one, tell me why you started using it, how long you stuck with it, and what made you stop or switch."
-                        required={true}
-                        placeholder="placholder..."
-                    />
-                    <FollowUpQuestion
-                        parentName="past_systems"
-                        {...followUpConfig.past_systems1}
-                    />
-                    <FollowUpQuestion
-                        parentName="past_systems"
-                        {...followUpConfig.past_systems2}
-                    />
-                    <FollowUpQuestion
-                        parentName="past_systems"
-                        {...followUpConfig.past_systems3}
-                    />
-
-
-                    <ParagraphAnswerQuestion
-                        name="recent_difficult_day"
-                        label="Tell me about a recent day that was particularly hard for you academically - walk me through from when you woke up to when you went to bed. What made it harder than usual?"
-                        required={true}
-                        placeholder="placholder..."
-                    />
-                    <FollowUpQuestion
-                        parentName="recent_difficult_day"
-                        {...followUpConfig.recent_difficult_day1}
-                    />
-                    <FollowUpQuestion
-                        parentName="recent_difficult_day"
-                        {...followUpConfig.recent_difficult_day2}
-                    />
-                    <FollowUpQuestion
-                        parentName="recent_difficult_day"
-                        {...followUpConfig.recent_difficult_day3}
-                    />
-
-
-                    <ParagraphAnswerQuestion
-                        name="burnt_out"
-                        label="Tell me about the last time you hit a wall emotionally with school - where you were just completely burnt out or couldn’t make yourself do anything. What day was that, what triggered it, and what did you actually do for the next few hours?"
-                        required={true}
-                        placeholder="placholder..."
-                    />
-                    <FollowUpQuestion
-                        parentName="burnt_out"
-                        {...followUpConfig.burnt_out1}
-                    />
-                    <FollowUpQuestion
-                        parentName="burnt_out"
-                        {...followUpConfig.burnt_out2}
-                    />
-                    <FollowUpQuestion
-                        parentName="burnt_out"
-                        {...followUpConfig.burnt_out3}
-                    />
-
-
-                    <ParagraphAnswerQuestion
-                        name="actual_impact"
-                        label="Let’s talk about actual impact. Can you tell me about a specific grade, dropped class, or academic consequence you’ve experienced because of these challenges? What happened?"
-                        required={true}
-                        placeholder="placholder..."
-                    />
-                    <FollowUpQuestion
-                        parentName="actual_impact"
-                        {...followUpConfig.actual_impact1}
-                    />
-                    <FollowUpQuestion
-                        parentName="actual_impact"
-                        {...followUpConfig.actual_impact2}
-                    />
-                    <FollowUpQuestion
-                        parentName="actual_impact"
-                        {...followUpConfig.actual_impact3}
-                    />
-
-
-                    <ParagraphAnswerQuestion
-                        name="dropping_out"
-                        label="Have you ever seriously considered dropping out, taking a leave of absence, or changing your major because of these struggles? If so, when was the closest you came to actually doing it, and what stopped you?"
-                        required={true}
-                        placeholder="placeholder..."
-                    />
-                    <FollowUpQuestion
-                        parentName="dropping_out"
-                        {...followUpConfig.dropping_out1}
-                    />
-                    <FollowUpQuestion
-                        parentName="dropping_out"
-                        {...followUpConfig.dropping_out2}
-                    />
-                    <FollowUpQuestion
-                        parentName="dropping_out"
-                        {...followUpConfig.dropping_out3}
-                    />
+                    <section>
+                        <h3>Dropping Out, Pausing, Changing Majors?</h3>
+                        <ParagraphAnswerQuestion
+                            name="dropping_out"
+                            label="Have you ever seriously considered dropping out, taking a leave of absence, or changing your major because of these struggles? If so, when was the closest you came to actually doing it, and what stopped you?"
+                            required={true}
+                            placeholder="placeholder..."
+                        />
+                        <FollowUpQuestion
+                            parentName="dropping_out"
+                            {...followUpConfig.dropping_out1}
+                        />
+                        <FollowUpQuestion
+                            parentName="dropping_out"
+                            {...followUpConfig.dropping_out2}
+                        />
+                        <FollowUpQuestion
+                            parentName="dropping_out"
+                            {...followUpConfig.dropping_out3}
+                        />
+                    </section>
 
                 </section>
 
