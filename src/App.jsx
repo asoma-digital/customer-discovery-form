@@ -1,5 +1,5 @@
 import './App.css'
-import DiscoveryForm from './components/DiscoveryForm'
+import DiscoveryForm from './components/DiscoveryForm.jsx'
 
 function App() {
   return (

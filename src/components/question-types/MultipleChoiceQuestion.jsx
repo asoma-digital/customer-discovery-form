@@ -1,11 +1,15 @@
 // src/components/MultipleChoiceQuestion.jsx
 import { useFormContext } from "react-hook-form";
 
-export default function MultipleChoiceQuestion({ name, label, options }) {
+export default function MultipleChoiceQuestion({ name, label, options, required }) {
   const {
     register,
     formState: { errors },
   } = useFormContext();
+  
+  const validationRules = {
+    required: required || `Please select an option for "${label}"`
+  };
 
   return (
     <div style={{ marginBottom: "1.5rem" }}>
@@ -17,7 +21,7 @@ export default function MultipleChoiceQuestion({ name, label, options }) {
             <input
               type="radio"
               value={option}
-              {...register(name, { required: `Please select an option for "${label}"` })}
+              {...register(name, validationRules)}
             />
             {" "}
             {option}
