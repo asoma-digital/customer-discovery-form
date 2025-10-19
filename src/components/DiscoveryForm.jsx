@@ -117,11 +117,11 @@ function DiscoveryForm() {
                     <p>Hi! I’m conducting a short research study to understand how college students organize their time, manage classes, and stay focused — especially when juggling multiple responsibilities.</p>
                     <p>This isn’t about testing or diagnosing ADHD. I’m interested in your real experiences — what’s hard, what helps, and what you wish existed.</p>
                     <p>There are no right or wrong answers — just honest ones. Your input will help us understand how to better support students like you.</p>
-                    <p>It takes about 10–12 minutes, and all responses are confidential and anonymous.</p>
+                    <p>It takes about 20 minutes, and all responses are confidential and anonymous.</p>
                 </section>
 
                 <section>
-                    <h2>Section 1: About You (Context & Demographics)</h2>
+                    <h2>About You (Demographics)</h2>
                     <MultipleChoiceQuestion
                         name="school_year"
                         label="What year are you in?"
@@ -134,6 +134,223 @@ function DiscoveryForm() {
                         required={true}
                         placeholder="e.g., Computer Science, Biology, etc."
                     />
+                    <MultipleChoiceQuestion
+                        name="current_workload"
+                        label="How would you describe your current workload this semester?"
+                        options={["Manageable", "Busy but doable", "Overwhelming most weeks"]}
+                        required="Please select an option"
+                    />
+                    <FollowUpQuestion
+                        parentName="current_workload"
+                        {...followUpConfig.current_workload}
+                    />
+                </section>
+
+                <section>
+                    <h2>Survey Questions</h2>
+                    <ParagraphAnswerQuestion
+                        name="recent_overwhelm"
+                        label="Can you walk me through a recent time - like in the past week - when you felt behind, overwhelmed, or like things were slipping through the cracks? What specifically triggered that feeling, and what did you do in response?"
+                        required={true}
+                        placeholder="placholder..."
+                    />
+                    <FollowUpQuestion
+                        parentName="recent_overwhelm"
+                        {...followUpConfig.recent_overwhelm1}
+                    />
+                    <FollowUpQuestion
+                        parentName="recent_overwhelm"
+                        {...followUpConfig.recent_overwhelm2}
+                    />
+                    <FollowUpQuestion
+                        parentName="recent_overwhelm"
+                        {...followUpConfig.recent_overwhelm3}
+                    />
+
+
+                    <ParagraphAnswerQuestion
+                        name="struggled_starting"
+                        label="Tell me about a specific assignment or deadline from the past two weeks where you struggled to get started or stay on track. Walk me through what happened from the moment you first knew about it to when you finally submitted it or missed it."
+                        required={true}
+                        placeholder="placholder..."
+                    />
+                    <FollowUpQuestion
+                        parentName="struggled_starting"
+                        {...followUpConfig.struggled_starting1}
+                    />
+                    <FollowUpQuestion
+                        parentName="struggled_starting"
+                        {...followUpConfig.struggled_starting2}
+                    />
+                    <FollowUpQuestion
+                        parentName="struggled_starting"
+                        {...followUpConfig.struggled_starting3}
+                    />
+
+
+                    <ParagraphAnswerQuestion
+                        name="recent_struggle_starting"
+                        label="Think about the last time you sat down to work on something important but couldn’t get yourself to actually start. Where were you, what were you supposed to be doing, and what happened instead?"
+                        required={true}
+                        placeholder="placholder..."
+                    />
+                    <FollowUpQuestion
+                        parentName="recent_struggle_starting"
+                        {...followUpConfig.recent_struggle_starting1}
+                    />
+                    <FollowUpQuestion
+                        parentName="recent_struggle_starting"
+                        {...followUpConfig.recent_struggle_starting2}
+                    />
+                    <FollowUpQuestion
+                        parentName="recent_struggle_starting"
+                        {...followUpConfig.recent_struggle_starting3}
+                    />
+
+
+                    <ParagraphAnswerQuestion
+                        name="track_assignments"
+                        label="Show me how you’re currently keeping track of your assignments and deadlines. Where do you write things down to save them? Can you pull it up and walk me through what’s on there right now?"
+                        required={true}
+                        placeholder="placholder..."
+                    />
+                    <FollowUpQuestion
+                        parentName="track_assignments"
+                        {...followUpConfig.track_assignments1}
+                    />
+                    <FollowUpQuestion
+                        parentName="track_assignments"
+                        {...followUpConfig.track_assignments2}
+                    />
+                    <FollowUpQuestion
+                        parentName="track_assignments"
+                        {...followUpConfig.track_assignments3}
+                    />
+
+
+                    <ParagraphAnswerQuestion
+                        name="system_failed"
+                        label="When was the last time your system failed you - like you missed something important or forgot a deadline? What broke down?"
+                        required={true}
+                        placeholder="placholder..."
+                    />
+                    <FollowUpQuestion
+                        parentName="system_failed"
+                        {...followUpConfig.system_failed1}
+                    />
+                    <FollowUpQuestion
+                        parentName="system_failed"
+                        {...followUpConfig.system_failed2}
+                    />
+                    <FollowUpQuestion
+                        parentName="system_failed"
+                        {...followUpConfig.system_failed3}
+                    />
+
+
+                    <ParagraphAnswerQuestion
+                        name="past_systems"
+                        label="Walk me through the different apps, planners, or systems you’ve tried in the past to stay organized. For each one, tell me why you started using it, how long you stuck with it, and what made you stop or switch."
+                        required={true}
+                        placeholder="placholder..."
+                    />
+                    <FollowUpQuestion
+                        parentName="past_systems"
+                        {...followUpConfig.past_systems1}
+                    />
+                    <FollowUpQuestion
+                        parentName="past_systems"
+                        {...followUpConfig.past_systems2}
+                    />
+                    <FollowUpQuestion
+                        parentName="past_systems"
+                        {...followUpConfig.past_systems3}
+                    />
+
+
+                    <ParagraphAnswerQuestion
+                        name="recent_difficult_day"
+                        label="Tell me about a recent day that was particularly hard for you academically - walk me through from when you woke up to when you went to bed. What made it harder than usual?"
+                        required={true}
+                        placeholder="placholder..."
+                    />
+                    <FollowUpQuestion
+                        parentName="recent_difficult_day"
+                        {...followUpConfig.recent_difficult_day1}
+                    />
+                    <FollowUpQuestion
+                        parentName="recent_difficult_day"
+                        {...followUpConfig.recent_difficult_day2}
+                    />
+                    <FollowUpQuestion
+                        parentName="recent_difficult_day"
+                        {...followUpConfig.recent_difficult_day3}
+                    />
+
+
+                    <ParagraphAnswerQuestion
+                        name="burnt_out"
+                        label="Tell me about the last time you hit a wall emotionally with school - where you were just completely burnt out or couldn’t make yourself do anything. What day was that, what triggered it, and what did you actually do for the next few hours?"
+                        required={true}
+                        placeholder="placholder..."
+                    />
+                    <FollowUpQuestion
+                        parentName="burnt_out"
+                        {...followUpConfig.burnt_out1}
+                    />
+                    <FollowUpQuestion
+                        parentName="burnt_out"
+                        {...followUpConfig.burnt_out2}
+                    />
+                    <FollowUpQuestion
+                        parentName="burnt_out"
+                        {...followUpConfig.burnt_out3}
+                    />
+
+
+                    <ParagraphAnswerQuestion
+                        name="actual_impact"
+                        label="Let’s talk about actual impact. Can you tell me about a specific grade, dropped class, or academic consequence you’ve experienced because of these challenges? What happened?"
+                        required={true}
+                        placeholder="placholder..."
+                    />
+                    <FollowUpQuestion
+                        parentName="actual_impact"
+                        {...followUpConfig.actual_impact1}
+                    />
+                    <FollowUpQuestion
+                        parentName="actual_impact"
+                        {...followUpConfig.actual_impact2}
+                    />
+                    <FollowUpQuestion
+                        parentName="actual_impact"
+                        {...followUpConfig.actual_impact3}
+                    />
+
+
+                    <ParagraphAnswerQuestion
+                        name="dropping_out"
+                        label="Have you ever seriously considered dropping out, taking a leave of absence, or changing your major because of these struggles? If so, when was the closest you came to actually doing it, and what stopped you?"
+                        required={true}
+                        placeholder="placeholder..."
+                    />
+                    <FollowUpQuestion
+                        parentName="dropping_out"
+                        {...followUpConfig.dropping_out1}
+                    />
+                    <FollowUpQuestion
+                        parentName="dropping_out"
+                        {...followUpConfig.dropping_out2}
+                    />
+                    <FollowUpQuestion
+                        parentName="dropping_out"
+                        {...followUpConfig.dropping_out3}
+                    />
+
+                </section>
+
+                <section>
+                    <h2>About You (Context)</h2>
                     <MultipleChoiceQuestion
                         name="diagnosis"
                         label="Do you have a formal ADHD diagnosis, or do you suspect you might have ADHD?"
@@ -152,155 +369,27 @@ function DiscoveryForm() {
                             required="Please select an option"
                         />
                     )}
-                    <MultipleChoiceQuestion
-                        name="current_workload"
-                        label="How would you describe your current workload this semester?"
-                        options={["Manageable", "Busy but doable", "Overwhelming most weeks"]}
-                        required="Please select an option"
-                    />
-                    <FollowUpQuestion
-                        parentName="current_workload"
-                        {...followUpConfig.current_workload}
-                    />
-                    <ParagraphAnswerQuestion
-                        name="current_organization"
-                        label="How do you currently organize your classes, assignments, and deadlines?"
-                        required={true}
-                        placeholder="Describe your organization methods..."
-                    />
-                    <FollowUpQuestion
-                        parentName="current_organization"
-                        {...followUpConfig.current_organization}
-                    />
-                </section>
-
-                 <section>
-                    <h2>Section 2: Real Experiences (Behavior-Based Discovery)</h2>
-                    <ParagraphAnswerQuestion
-                        name="recent_overwhelm"
-                        label="Can you walk me through a recent week when you felt behind or overwhelmed with schoolwork?"
-                        required={true}
-                        placeholder="Describe your challenges..."
-                    />
-                    <FollowUpQuestion
-                        parentName="recent_overwhelm"
-                        {...followUpConfig.recent_overwhelm}
-                    />
-                    <ParagraphAnswerQuestion
-                        name="assignment_struggle"
-                        label="Think of one assignment or deadline you struggled to start or finish. What happened from the moment you knew about it to when it was due?"
-                        required={true}
-                        placeholder="Describe the focus challenges..."
-                    />
-                    <FollowUpQuestion
-                        parentName="assignment_struggle"
-                        {...followUpConfig.assignment_struggle}
-                    />
-                    <ShortAnswerQuestion
-                        name="falling_behind"
-                        label="How do you know when you’re falling behind? What’s the first sign?"
-                        required={true}
-                        placeholder="Describe the signs you've noticed..."
-                    />
-                    <MultipleChoiceQuestion
-                        name="getting_started"
-                        label="What usually makes it hardest to get started on something important?"
-                        options={["Not knowing where to start", "The task feels boring or overwhelming", "I lose track of time", "I get distracted easily", "I wait for the pressure to kick in", "Something else (please describe)"]}
-                        required="Please select an option"
-                    />
-                    <ShortAnswerQuestion
-                        name="finally_starting"
-                        label="When you finally start, what usually helps you begin?"
-                        required={false}
-                        placeholder="Describe other challenges..."
-                    />
-                    <FollowUpQuestion
-                        parentName="finally_starting"
-                        {...followUpConfig.finally_starting}
-                    />
-                    <ParagraphAnswerQuestion
-                        name="task_tracking"
-                        label="How do you keep track of what you have to do (apps, planners, notes, memory, etc.)?"
-                        required={false}
-                        placeholder="Describe your past strategies..."
-                    />
-                    <FollowUpQuestion
-                        parentName="task_tracking"
-                        {...followUpConfig.task_tracking}
-                    />
-                    <ParagraphAnswerQuestion
-                        name="system_failed"
-                        label="Tell me about the last time your system failed — like missing something important or realizing too late. What happened?"
-                        required={false}
-                        placeholder="Describe a successful strategy..."
-                    />
-                    <FollowUpQuestion
-                        parentName="system_failed"
-                        {...followUpConfig.system_failed}
-                    />
-                    <ParagraphAnswerQuestion
-                        name="coping_strategies"
-                        label="When you get stressed or hit a wall, what do you usually do to cope or reset?"
-                        required={false}
-                        placeholder="Describe a failed strategy..."
-                    />
-                    <FollowUpQuestion
-                        parentName="coping_strategies"
-                        {...followUpConfig.coping_strategies}
-                    />
-                    <MultipleChoiceQuestion
-                        name="burnout_frequency"
-                        label="How often do you feel burnt out or exhausted by schoolwork?"
-                        options={["Rarely", "A few times per semester", "Every few weeks", "Almost every week"]}
-                        required="Please select an option"
-                    />
-                    <ParagraphAnswerQuestion
-                        name="struggle_impact"
-                        label="Has struggling to stay organized or manage time ever affected your grades, confidence, or mental health?"
-                        required={false}
-                        placeholder="Describe your support system..."
-                    />
-                    <FollowUpQuestion
-                        parentName="struggle_impact"
-                        {...followUpConfig.struggle_impact}
-                    />
-                    <ParagraphAnswerQuestion
-                        name="tried_tools"
-                        label="What apps, systems, or routines have you tried to help you stay on top of things?"
-                        required={true}
-                        placeholder="Describe your ideal tool..."
-                    />
-                    <FollowUpQuestion
-                        parentName="tried_tools"
-                        {...followUpConfig.tried_tools}
-                    />
-                    <ParagraphAnswerQuestion
-                        name="chaotic_day"
-                        label="Imagine your most chaotic day of the semester — what makes that day so hard to manage?"
-                        required={false}
-                        placeholder="Describe your improvement suggestions..."
-                    />
                 </section>
 
                 <section>
-                    <h2>Section 3: Looking Forward (Optional Reflection)</h2>
+                    <h2>Closing</h2>
                     <ParagraphAnswerQuestion
-                        name="school_expectation"
-                        label="If you could change one thing about how school expects you to manage time or deadlines, what would it be?"
+                        name="forgotten_questions"
+                        label="What questions do you feel were not addressed in this interview?"
                         required={false}
-                        placeholder="Describe your ideal solutions..."
+                        placeholder="Were certain topics that impact your productivity not accounted for..."
                     />
                     <ParagraphAnswerQuestion
-                        name="actually_works"
-                        label="What’s one thing that actually works for you — even a little — when it comes to staying organized or focused?"
+                        name="who_else"
+                        label="Who else should I talk to about this topic?"
                         required={false}
-                        placeholder="Describe the tools that work..."
+                        placeholder="The emails of anyone who's relevant like a friend or classmate at college..."
                     />
                     <MultipleChoiceQuestion
-                        name="future_interest"
-                        label="Would you be open to a short 20-minute chat about your answers?"
-                        options={["Yes, I'd love to", "Maybe later", "No, thank you"]}
-                        required="Please select an option"
+                        name="share_findings"
+                        label="Would you like to receive a summary of the research findings once the study is complete?"
+                        required={false}
+                        options={["Yes", "No"]}
                     />
                 </section>
 
