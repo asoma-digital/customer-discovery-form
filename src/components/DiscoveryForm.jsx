@@ -8,6 +8,8 @@ import {
   ShortAnswerQuestion,
   ParagraphAnswerQuestion
 } from './question-types';
+import { FollowUpQuestion } from './question-types/FollowUpQuestion';
+import { followUpConfig } from './question-types/followUpConfig';
 
 // Simple error boundary to catch rendering errors
 class ErrorBoundary extends React.Component {
@@ -138,6 +140,10 @@ function DiscoveryForm() {
                         options={["Yes, diagnosed", "No, but I think I might", "No"]}
                         required="Please select an option"
                     />
+                    <FollowUpQuestion
+                        parentName="diagnosis"
+                        {...followUpConfig.diagnosis}
+                    />
                     {diagnosisAnswer && diagnosisAnswer !== "No" && (
                         <MultipleChoiceQuestion
                             name="diagnosis_timeframe"
@@ -152,12 +158,125 @@ function DiscoveryForm() {
                         options={["Manageable", "Busy but doable", "Overwhelming most weeks"]}
                         required="Please select an option"
                     />
+                    <FollowUpQuestion
+                        parentName="current_workload"
+                        {...followUpConfig.current_workload}
+                    />
                     <ParagraphAnswerQuestion
                         name="current_organization"
                         label="How do you currently organize your classes, assignments, and deadlines?"
                         required={true}
                         placeholder="Describe your organization methods..."
                     />
+                    <FollowUpQuestion
+                        parentName="current_organization"
+                        {...followUpConfig.current_organization}
+                    />
+                </section>
+
+                 <section>
+                    <h2>Section 2: Real Experiences (Behavior-Based Discovery)</h2>
+                    <ParagraphAnswerQuestion
+                        name="recent_overwhelm"
+                        label="Can you walk me through a recent week when you felt behind or overwhelmed with schoolwork?"
+                        required={true}
+                        placeholder="Describe your challenges..."
+                    />
+                    <ParagraphAnswerQuestion
+                        name="assignment_struggle"
+                        label="Think of one assignment or deadline you struggled to start or finish. What happened from the moment you knew about it to when it was due?"
+                        required={true}
+                        placeholder="Describe the focus challenges..."
+                    />
+                    <ShortAnswerQuestion
+                        name="falling_behind"
+                        label="How do you know when you’re falling behind? What’s the first sign?"
+                        required={true}
+                        placeholder="Describe the signs you've noticed..."
+                    />
+                    <MultipleChoiceQuestion
+                        name="getting_started"
+                        label="What usually makes it hardest to get started on something important?"
+                        options={["Not knowing where to start", "The task feels boring or overwhelming", "I lose track of time", "I get distracted easily", "I wait for the pressure to kick in", "Something else (please describe)"]}
+                        required="Please select an option"
+                    />
+                    <ShortAnswerQuestion
+                        name="finally_starting"
+                        label="When you finally start, what usually helps you begin?"
+                        required={false}
+                        placeholder="Describe other challenges..."
+                    />
+                    <ParagraphAnswerQuestion
+                        name="past_strategies"
+                        label="How do you keep track of what you have to do (apps, planners, notes, memory, etc.)?"
+                        required={false}
+                        placeholder="Describe your past strategies..."
+                    />
+                    <ParagraphAnswerQuestion
+                        name="system_failed"
+                        label="Tell me about the last time your system failed — like missing something important or realizing too late. What happened?"
+                        required={false}
+                        placeholder="Describe a successful strategy..."
+                    />
+                    <ParagraphAnswerQuestion
+                        name="coping_strategies"
+                        label="When you get stressed or hit a wall, what do you usually do to cope or reset?"
+                        required={false}
+                        placeholder="Describe a failed strategy..."
+                    />
+                    <MultipleChoiceQuestion
+                        name="burnout_frequency"
+                        label="How often do you feel burnt out or exhausted by schoolwork?"
+                        options={["Rarely", "A few times per semester", "Every few weeks", "Almost every week"]}
+                        required="Please select an option"
+                    />
+                    <ParagraphAnswerQuestion
+                        name="struggle_impact"
+                        label="Has struggling to stay organized or manage time ever affected your grades, confidence, or mental health?"
+                        required={false}
+                        placeholder="Describe your support system..."
+                    />
+                    <ParagraphAnswerQuestion
+                        name="tried_tools"
+                        label="What apps, systems, or routines have you tried to help you stay on top of things?"
+                        required={true}
+                        placeholder="Describe your ideal tool..."
+                    />
+                    <ParagraphAnswerQuestion
+                        name="chaotic_day"
+                        label="Imagine your most chaotic day of the semester — what makes that day so hard to manage?"
+                        required={false}
+                        placeholder="Describe your improvement suggestions..."
+                    />
+                </section>
+
+                <section>
+                    <h2>Section 3: Looking Forward (Optional Reflection)</h2>
+                    <ParagraphAnswerQuestion
+                        name="school_expectation"
+                        label="If you could change one thing about how school expects you to manage time or deadlines, what would it be?"
+                        required={false}
+                        placeholder="Describe your ideal solutions..."
+                    />
+                    <ParagraphAnswerQuestion
+                        name="actually_works"
+                        label="What’s one thing that actually works for you — even a little — when it comes to staying organized or focused?"
+                        required={false}
+                        placeholder="Describe the tools that work..."
+                    />
+                    <MultipleChoiceQuestion
+                        name="future_interest"
+                        label="Would you be open to a short 20-minute chat about your answers?"
+                        options={["Yes, I'd love to", "Maybe later", "No, thank you"]}
+                        required="Please select an option"
+                    />
+                </section>
+
+                <section>
+                    <h2>Closing Message</h2>
+                    <p>Thank you so much for taking the time to share your experiences.</p>
+                    <p>Your insights help us understand what’s really going on behind the scenes for students managing busy schedules, focus challenges, and academic pressure.</p>
+                    <p>Your responses are confidential and for research purposes only. This isn’t a test, a diagnosis, or a sales pitch — just a way to better understand what students truly need.</p>
                 </section>
 
                 <button
