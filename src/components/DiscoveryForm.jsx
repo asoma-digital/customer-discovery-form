@@ -41,9 +41,9 @@ function DiscoveryForm() {
     });
     const { handleSubmit, reset, control, register, formState: { errors } } = methods;
 
-    const followUp = useWatch({ control, name: "followUp" });
-    const schoolYear = useWatch({ control, name: "school_year" });
     const diagnosisAnswer = useWatch({ control, name: "diagnosis" });
+    const overwhelmedAnswer = useWatch({ control, name: "recent_overwhelm" });
+    
 
     const [submitted, setSubmitted] = useState(false);
     const [startTime, setStartTime] = useState(null);
@@ -182,11 +182,19 @@ function DiscoveryForm() {
                         required={true}
                         placeholder="Describe your challenges..."
                     />
+                    <FollowUpQuestion
+                        parentName="recent_overwhelm"
+                        {...followUpConfig.recent_overwhelm}
+                    />
                     <ParagraphAnswerQuestion
                         name="assignment_struggle"
                         label="Think of one assignment or deadline you struggled to start or finish. What happened from the moment you knew about it to when it was due?"
                         required={true}
                         placeholder="Describe the focus challenges..."
+                    />
+                    <FollowUpQuestion
+                        parentName="assignment_struggle"
+                        {...followUpConfig.assignment_struggle}
                     />
                     <ShortAnswerQuestion
                         name="falling_behind"
@@ -206,11 +214,19 @@ function DiscoveryForm() {
                         required={false}
                         placeholder="Describe other challenges..."
                     />
+                    <FollowUpQuestion
+                        parentName="finally_starting"
+                        {...followUpConfig.finally_starting}
+                    />
                     <ParagraphAnswerQuestion
-                        name="past_strategies"
+                        name="task_tracking"
                         label="How do you keep track of what you have to do (apps, planners, notes, memory, etc.)?"
                         required={false}
                         placeholder="Describe your past strategies..."
+                    />
+                    <FollowUpQuestion
+                        parentName="task_tracking"
+                        {...followUpConfig.task_tracking}
                     />
                     <ParagraphAnswerQuestion
                         name="system_failed"
@@ -218,11 +234,19 @@ function DiscoveryForm() {
                         required={false}
                         placeholder="Describe a successful strategy..."
                     />
+                    <FollowUpQuestion
+                        parentName="system_failed"
+                        {...followUpConfig.system_failed}
+                    />
                     <ParagraphAnswerQuestion
                         name="coping_strategies"
                         label="When you get stressed or hit a wall, what do you usually do to cope or reset?"
                         required={false}
                         placeholder="Describe a failed strategy..."
+                    />
+                    <FollowUpQuestion
+                        parentName="coping_strategies"
+                        {...followUpConfig.coping_strategies}
                     />
                     <MultipleChoiceQuestion
                         name="burnout_frequency"
@@ -236,11 +260,19 @@ function DiscoveryForm() {
                         required={false}
                         placeholder="Describe your support system..."
                     />
+                    <FollowUpQuestion
+                        parentName="struggle_impact"
+                        {...followUpConfig.struggle_impact}
+                    />
                     <ParagraphAnswerQuestion
                         name="tried_tools"
                         label="What apps, systems, or routines have you tried to help you stay on top of things?"
                         required={true}
                         placeholder="Describe your ideal tool..."
+                    />
+                    <FollowUpQuestion
+                        parentName="tried_tools"
+                        {...followUpConfig.tried_tools}
                     />
                     <ParagraphAnswerQuestion
                         name="chaotic_day"
