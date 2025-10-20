@@ -538,13 +538,11 @@ function DiscoveryForm() {
             >
 
                 <div style={{
-                    backgroundColor: "#fff",
                     padding: "2rem",
                     borderRadius: "8px",
                     boxShadow: "0 2px 4px rgba(0,0,0,0.1)"
                 }}>
                     <h1 style={{ 
-                        color: "#2c5282",
                         marginBottom: "1.5rem"
                     }}>
                         {sections[currentPage].title}
